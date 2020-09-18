@@ -18,15 +18,16 @@ const advice = [
 ];
 
 function App() {
-  const [piece, setPiece] = useState();
+  const [[piece], setState] = useState([null, advice]);
 
   function giveAdvice() {
-    setPiece((oldPiece) => {
-      const newPiece = advice[Math.floor(Math.random() * advice.length)];
-      if (oldPiece === newPiece) {
-        giveAdvice();
+    setState(([_, remainingPieces]) => {
+      if (remainingPieces.length === 0) {
+        remainingPieces = advice;
       }
-      return newPiece;
+      const newPiece =
+        remainingPieces[Math.floor(Math.random() * remainingPieces.length)];
+      return [newPiece, remainingPieces.filter((p) => p !== newPiece)];
     });
   }
 
