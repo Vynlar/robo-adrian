@@ -22,4 +22,10 @@ button {
   outline: 0;
   border: 0;
   font-family: monospace;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: green;
+  color: white;
 }

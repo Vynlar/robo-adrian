@@ -14,6 +14,7 @@ const advice = [
   "stop using jira",
   "STICKY NOTES",
   "think, write, explain, place",
+  "outcomes over output",
 ];
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
   return (
     <div id="main">
       <h1>r0bo-adri4n</h1>
-      <p>{piece || "Click for guidance"}</p>
+      <p>{piece || "click for guidance"}</p>
       <button onClick={giveAdvice}>get adrian-ism</button>
     </div>
   );
